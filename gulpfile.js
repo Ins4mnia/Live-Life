@@ -3,6 +3,7 @@
 const {src , dest, series} = require('gulp');
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
 const del = require('del'); 
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
@@ -22,10 +23,17 @@ const path = {
     fonts: distPath + "fonts/"
   },
   src: {
-    html: srcPath + "/**/*.html",
-    css: srcPath + "/**/*.css",
+    html: srcPath + "html/*.html",
+    css: srcPath + "blocks/**/*.css",
+    js: srcPath + "/**/*.js",
+    images: srcPath + "images/*.{jpg,png,svg}",
+    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}"
+  },
+  watch: {
+    html: srcPath + "html/*.html",
+    css: srcPath + "blocks/**/*.css",
     js: srcPath + "blocks/**/*.js",
-    images: srcPath + "blocks/**/*.{jpg,png,svg}",
+    images: srcPath + "images/*.{jpg,png,svg}",
     fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}"
   },
   clean: "./" + distPath
@@ -79,7 +87,8 @@ function watchFiles() {
   gulp.watch([path.watch.images],images)
 }
 
-const build = gulp.series(clean,gulp.parallel(html,js,css))
+const build = gulp.series(clean,gulp.parallel(html,js,css,images,fonts))
+const watch = gulp.parallel(build,watchFiles)
 
 exports.html = html
 exports.js = js
@@ -88,3 +97,4 @@ exports.fonts = fonts
 exports.images = images
 exports.clean = clean
 exports.build = build
+exports.watch = watch

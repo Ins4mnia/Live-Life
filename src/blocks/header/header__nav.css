@@ -1,0 +1,6 @@
+.header__nav {
+  display: flex;
+  letter-spacing: 1px;
+  gap: 20px;
+  text-transform: uppercase;
+}
