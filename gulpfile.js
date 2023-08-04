@@ -16,11 +16,11 @@ const distPath = "dist/"
 
 const path = {
   build: {
-    html: distPath + "html/",
-    css: distPath + "css/",
-    js: distPath + "js/",
-    images: distPath + "images/",
-    fonts: distPath + "fonts/"
+    html: distPath + "pages/",
+    css: distPath + "assets/css/",
+    js: distPath + "assets/js/",
+    images: distPath + "assets/images/",
+    fonts: distPath + "assets/fonts/"
   },
   src: {
     html: srcPath + "html/*.html",
