@@ -1,9 +1,10 @@
 .header {
   width: 100%;
-  background-color: #50C878;
+  background-color: #5FAB59;
   position: fixed;
   z-index: 1;
   display: flex;
+  gap: 25px;
   align-items: center;
-  height: 60px;
+  height: 45px;
 }

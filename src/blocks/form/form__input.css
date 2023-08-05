@@ -1,0 +1,8 @@
+.form__input {
+  width: 400px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  text-align: center;
+}

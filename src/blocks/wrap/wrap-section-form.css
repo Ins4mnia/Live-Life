@@ -1,0 +1,8 @@
+.wrap-section-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 3px solid #77D670;
+  padding: 20px 0;
+}

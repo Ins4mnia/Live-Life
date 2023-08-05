@@ -10,6 +10,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const csso = require('gulp-csso');
+const panini = require('panini')
 
 const srcPath = "src/"
 const distPath = "dist/"
@@ -20,21 +21,24 @@ const path = {
     css: distPath + "assets/css/",
     js: distPath + "assets/js/",
     images: distPath + "assets/images/",
-    fonts: distPath + "assets/fonts/"
+    fonts: distPath + "assets/fonts/",
+    video: distPath + "assets/video"
   },
   src: {
-    html: srcPath + "html/*.html",
+    html: srcPath + "pages/*.html",
     css: srcPath + "blocks/**/*.css",
     js: srcPath + "/**/*.js",
     images: srcPath + "images/*.{jpg,png,svg}",
-    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}"
+    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}",
+    video: srcPath + "video/*.mp4"
   },
   watch: {
-    html: srcPath + "html/*.html",
+    html: srcPath + "pages/*.html",
     css: srcPath + "blocks/**/*.css",
     js: srcPath + "blocks/**/*.js",
     images: srcPath + "images/*.{jpg,png,svg}",
-    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}"
+    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}",
+    video: srcPath + "video/*.mp4"
   },
   clean: "./" + distPath
 }
@@ -75,6 +79,12 @@ function images() {
     .pipe(dest(path.build.images))
 }
 
+function video() {
+  return src(path.src.video)
+    .pipe(dest(path.build.video))
+}
+
+
 function clean() {
   return del(path.clean)
 }
@@ -85,9 +95,10 @@ function watchFiles() {
   gulp.watch([path.watch.js], js),
   gulp.watch([path.watch.fonts],fonts)
   gulp.watch([path.watch.images],images)
+  gulp.watch([path.watch.video],video)
 }
 
-const build = gulp.series(clean,gulp.parallel(html,js,css,images,fonts))
+const build = gulp.series(clean,gulp.parallel(html,js,css,images,fonts, video))
 const watch = gulp.parallel(build,watchFiles)
 
 exports.html = html
@@ -95,6 +106,7 @@ exports.js = js
 exports.css = css 
 exports.fonts = fonts
 exports.images = images
+exports.video = video
 exports.clean = clean
 exports.build = build
 exports.watch = watch
