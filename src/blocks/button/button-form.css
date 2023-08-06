@@ -1,7 +1,7 @@
 .button-form {
-  background-color: white;
+  background-color: rgba(128, 128, 128, 0.2);
   border: 0;
   cursor: pointer;
   font-size: 20px;
-  padding: 10px 0px 0px 0px;
+  padding: 10px;
 }
