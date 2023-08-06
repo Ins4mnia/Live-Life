@@ -1,0 +1,11 @@
+.header__nav-links {
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 650px) {
+  .header__nav-links {
+    display: none;
+  }
+}

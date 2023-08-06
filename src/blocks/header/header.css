@@ -1,10 +1,21 @@
 .header {
   width: 100%;
-  background-color: #5FAB59;
+  background-color: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(5px);
   position: fixed;
   z-index: 1;
-  display: flex;
   gap: 25px;
-  align-items: center;
   height: 45px;
+}
+
+@media only screen and (max-width: 468px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 1900px) {
+  
 }

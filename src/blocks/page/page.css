@@ -6,3 +6,16 @@
   font-family: 'Montserrat', sans-serif;
   background-color: rgb(245, 245, 245);
 }
+
+h1,h2,h3,p {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 20px;
+}

@@ -3,5 +3,28 @@
   margin: 0;
   font-size: 60px;
   font-weight: light;
-  color: rgb(50, 50, 50);
+}
+
+@media only screen and (min-width: 280px) {
+   .title {
+    font-size: 34px;
+   }
+}
+
+@media only screen and (min-width: 468px) {
+   .title {
+    font-size: 44px;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+   .title {
+    font-size: 55px;
+   }
+}
+
+@media only screen and (min-width: 1700px) {
+   .title {
+      font-size: 60px;
+    }
 }

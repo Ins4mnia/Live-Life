@@ -1,0 +1,42 @@
+.hero__img {
+  height: 700px;
+  width: 800px;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 280px) {
+  .hero__img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 468px) {
+  .hero__img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero__img {
+    height: 500px;
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .hero__img {
+    height: 600px;
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .hero__img {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+

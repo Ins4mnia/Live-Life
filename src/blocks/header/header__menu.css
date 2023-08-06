@@ -1,0 +1,13 @@
+.header__menu  {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap: 40px;
+    background-color: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    padding: 40px;
+}

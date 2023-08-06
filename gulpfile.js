@@ -10,7 +10,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const csso = require('gulp-csso');
-const panini = require('panini')
+const imagemin = require('gulp-imagemin')
 
 const srcPath = "src/"
 const distPath = "dist/"
@@ -28,16 +28,16 @@ const path = {
     html: srcPath + "pages/*.html",
     css: srcPath + "blocks/**/*.css",
     js: srcPath + "/**/*.js",
-    images: srcPath + "images/*.{jpg,png,svg}",
-    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}",
+    images: srcPath + "images/*.{jpg,png,svg,jpeg}",
+    fonts: srcPath + "fonts/static/*.{eot,woff,woff2,ttf,svg}",
     video: srcPath + "video/*.mp4"
   },
   watch: {
     html: srcPath + "pages/*.html",
     css: srcPath + "blocks/**/*.css",
     js: srcPath + "blocks/**/*.js",
-    images: srcPath + "images/*.{jpg,png,svg}",
-    fonts: srcPath + "fonts/*.{eot,woff,woff2,ttf,svg}",
+    images: srcPath + "images/*.{jpg,png,svg,jpeg}",
+    fonts: srcPath + "fonts/static/*.{eot,woff,woff2,ttf,svg}",
     video: srcPath + "video/*.mp4"
   },
   clean: "./" + distPath
@@ -76,6 +76,11 @@ function fonts() {
 
 function images() {
   return src(path.src.images)
+    .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({progressive: true}),
+        imagemin.optipng({optimizationLevel: 5})  
+      ]))
     .pipe(dest(path.build.images))
 }
 

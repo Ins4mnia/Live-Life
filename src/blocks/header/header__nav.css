@@ -1,6 +1,15 @@
 .header__nav {
   display: flex;
+  justify-content: center;
   letter-spacing: 1px;
+  font-size: 10px;
   gap: 20px;
-  text-transform: uppercase;
+  align-items: center;
+  padding: 0 20px
+}
+
+@media only screen and (max-width: 650px) {
+  .header__nav {
+    justify-content: space-between !important;
+  }
 }

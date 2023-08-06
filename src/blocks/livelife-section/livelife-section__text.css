@@ -1,0 +1,34 @@
+.livelife-section__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+  height: 100%;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+@media only screen and (min-width:280px) {
+  .livelife-section__text {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (min-width:468px) {
+  .livelife-section__text {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .livelife-section__text {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width:1700px) {
+  .livelife-section__text {
+    font-size: 28px;
+  }
+}
